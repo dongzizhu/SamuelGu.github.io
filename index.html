@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dongzizhu</title>
+  <title>Samuel (Zishan) Gu</title>
   <style>
     :root { --max: 900px; }
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; line-height: 1.6; }
     header { padding: 60px 20px 30px; border-bottom: 1px solid #eee; }
+    .header-content { max-width: var(--max); margin: auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .profile-pic { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid #eee; flex-shrink: 0; }
+    .header-text { flex: 1; min-width: 280px; }
     main { max-width: var(--max); margin: auto; padding: 30px 20px 60px; }
     h1 { margin-bottom: 8px; }
     .subtitle { color: #444; }
@@ -15,13 +18,25 @@
     .links a:hover { text-decoration: underline; }
 
     section { margin-top: 40px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
 
-    .card {
+    .pub-list { list-style: none; padding: 0; }
+    .pub-list li { margin-bottom: 20px; padding-left: 20px; border-left: 3px solid #007acc; }
+    .pub-title { font-weight: 600; }
+    .pub-authors { color: #555; font-size: 0.95em; }
+    .pub-venue { color: #666; font-style: italic; font-size: 0.9em; }
+    .pub-link { display: inline-block; margin-top: 5px; font-size: 0.9em; }
+
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .project-card {
       border: 1px solid #eee;
       border-radius: 12px;
-      padding: 16px;
+      padding: 20px;
+      transition: box-shadow 0.2s, border-color 0.2s;
     }
+    .project-card:hover { border-color: #007acc; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .project-card h3 { margin: 0 0 10px; }
+    .project-card p { color: #555; font-size: 0.95em; margin: 0 0 12px; }
+    .project-card a { font-size: 0.9em; }
 
     footer {
       border-top: 1px solid #eee;
@@ -29,20 +44,33 @@
       text-align: center;
       color: #666;
     }
+
+    @media (max-width: 600px) {
+      .header-content { flex-direction: column; text-align: center; }
+      .profile-pic { width: 140px; height: 140px; }
+      .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+      .links a { margin-right: 0; }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Dongzizhu</h1>
-  <p class="subtitle">
-    Researcher and engineer in machine learning, quantitative finance, and AI systems.
-  </p>
-  <p class="links">
-    <a href="https://https://www.linkedin.com/in/zishangu/" target="_blank">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=ExDbdToAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
-    <a href="https://github.com/dongzizhu" target="_blank">GitHub</a>
-  </p>
+  <div class="header-content">
+    <!-- Replace 'profile.jpg' with your actual image file name -->
+    <img src="profile.jpg" alt="Samuel (Zishan) Gu" class="profile-pic" />
+    <div class="header-text">
+      <h1>Samuel (Zishan) Gu</h1>
+      <p class="subtitle">
+        Researcher and engineer in machine learning, quantitative finance, and AI systems.
+      </p>
+      <p class="links">
+        <a href="https://www.linkedin.com/in/zishangu/" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=ExDbdToAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+        <a href="https://github.com/dongzizhu" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </div>
 </header>
 
 <main>
@@ -51,25 +79,88 @@
   <h2>About Me</h2>
 
   <p>
-    I am a quantitative researcher and engineer working at the intersection of artificial intelligence, data science, and financial markets. I earned my Master’s degree in Computer Science from Columbia University in December 2021. Following graduation, I joined The Ohio State University as a Research Associate, where my research focused on data mining and machine learning for medical time-series data, including electronic health records (EHR).
+    I am a quantitative researcher and engineer working at the intersection of artificial intelligence, data science, and financial markets. I hold a Master’s degree in Computer Science from Columbia University and am currently pursuing a Master of Financial Engineering at UC Berkeley, integrating machine learning with financial modeling and market microstructure.
   </p>
 
   <p>
-    My most recent academic work has explored advanced AI-driven frameworks, including the development of collaborative multi-agent systems for medical visual question answering using large language models, as well as systematic investigations into hallucination phenomena in multimodal LLMs. Beyond theory, I have actively translated these AI-agent methodologies into real-world systems, applying them to large-scale decision-making pipelines in both research and industry environments.
+    My background spans academic research and industry deployment of advanced AI systems. At The Ohio State University, I conducted research on machine learning for medical time-series data and multimodal large language models, including multi-agent systems and hallucination analysis.
+    In industry, I have built large-scale agentic AI platforms for complex financial workflows, including equity research systems at Neuberger Berman and an AI-driven due-diligence platform for renewable-energy finance at CEART.
+    I have also worked on applied quantitative research project with BlackRock and JPMorgan, developing deep learning models for rates relative-value strategies and LLM-based feature engineering pipelines for financial forecasting.
   </p>
 
   <p>
-    In industry, I have built and deployed agentic AI systems for complex analytical workflows. At Neuberger Berman, I developed evaluation frameworks and data-retrieval agents for multi-source, agent-based research platforms supporting equity analysis. Previously, as an AI Engineer at CEART, I designed and deployed a large-scale agentic dataroom intelligence platform for renewable-energy finance, automating due diligence across terabytes of deal documentation and reducing evaluation timelines from months to under 24 hours.
-  </p>
-
-  <p>
-    Motivated by a long-standing fascination with financial markets and quantitative analysis, I began pursuing a Master of Financial Engineering at UC Berkeley in March 2025. My training integrates machine learning with financial modeling and market microstructure, enabling me to apply AI and statistical learning directly to trading and investment research. I have conducted deep learning–based statistical arbitrage research with BlackRock, developing CNN–Transformer models for U.S. rates relative-value strategies, and worked with JPMorgan on LLM-powered pipelines for forecasting equity short interest from large-scale unstructured financial data.
-  </p>
-
-  <p>
-    With a strong foundation in AI research and quantitative modeling, I focus on building rigorous, data-driven systems that operate in real-world financial environments. I am particularly interested in problems that combine machine learning, market dynamics, and scalable financial infrastructure, and I enjoy collaborating with researchers and practitioners pushing the frontier of quantitative finance.
+    My focus is on building rigorous, production-grade AI systems for real-world financial markets, combining machine learning, market dynamics, and scalable financial infrastructure.
   </p>
 </section>
 
 
-<section id=
+<section id="publications">
+  <h2>Publications</h2>
+  <ul class="pub-list">
+    <li>
+      <div class="pub-title">MedVH: Towards Systematic Evaluation of Hallucination for Large Vision Language Models in the Medical Context</div>
+      <div class="pub-authors">Zishan Gu, Changchang Yin, Fenglin Liu, Ping Zhang</div>
+      <div class="pub-venue">Advanced Intelligence System, 2025</div>
+      <a class="pub-link" href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/aisy.202500255" target="_blank">Paper</a>
+    </li>
+    <li>
+      <div class="pub-title">A Proactive Agent Collaborative Framework for Zero-Shot Multimodal Medical Reasoning</div>
+      <div class="pub-authors">Zishan Gu, Fenglin Liu, Changchang Yin, Ping Zhang</div>
+      <div class="pub-venue">Advanced Intelligence Systems, 2025</div>
+      <a class="pub-link" href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/aisy.202400840" target="_blank">Paper</a>
+    </li>
+    <li>
+      <div class="pub-title">Dynamic Activation of Clients and Parameters for Federated Learning over Heterogeneous Graphs</div>
+      <div class="pub-authors">Zishan Gu, Ke Zhang, Guangji Bai, Liang Chen, Liang Zhao, Carl Yang</div>
+      <div class="pub-venue">39th IEEE International Conference on Data Engineering (ICDE), 2023</div>
+      <a class="pub-link" href="https://ieeexplore.ieee.org/document/10184557" target="_blank">Paper</a>
+    </li>
+    <li>
+      <div class="pub-title">Deep Insights into Graph Adversarial Learning: An Empirical Study Perspective</div>
+      <div class="pub-authors">Jintang Li, Zishan Gu, Qibiao Peng, Kun Xu, Liang Chen, Zibin Zheng</div>
+      <div class="pub-venue">Joint Workshop on Human Brain and Artificial Intelligence (HBAI), 2020</div>
+      <a class="pub-link" href="https://link.springer.com/chapter/10.1007/978-981-16-1288-6_6" target="_blank">Paper</a>
+    </li>
+    <li>
+      <div class="pub-title">Are All Edges Necessary? A Unified Framework for Graph Purification</div>
+      <div class="pub-authors">Zishan Gu, Jintang Li, Liang Chen</div>
+      <div class="pub-venue">arXiv, 2022</div>
+      <a class="pub-link" href="https://arxiv.org/abs/2211.05184" target="_blank">Paper</a>
+    </li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Short Interest Prediction</h3>
+      <p>An end-to-end agentic framework for feature engineering that processes unstructured financial data and integrates FINRA short interest datasets to construct predictive models for equity short interest forecasting. Developed in collaboration with JPMorgan.</p>
+      <a href="https://github.com/dongzizhu/short_interest_prediction" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>MultiMedRes</h3>
+      <p>A multimodal medical collaborative reasoning framework that incorporates a learner agent to proactively gain domain-specific knowledge from expert models. Uses a three-step process (Inquire, Interact, Integrate) to solve medical multimodal reasoning problems, achieving state-of-the-art zero-shot performance on X-ray visual question answering.</p>
+      <a href="https://github.com/dongzizhu/multiMedRes" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>MedVH Benchmark</h3>
+      <p>A benchmark dataset for evaluating hallucination in domain-specific Large Vision Language Models within the medical context. Comprises six tasks for comprehensive understanding of textual and visual input, as well as long textual response generation.</p>
+      <a href="https://physionet.org/content/medvh/1.0.1/" target="_blank">View Dataset</a>
+    </div>
+    <div class="project-card">
+      <h3>FedDA</h3>
+      <p>Dynamic activation strategies for clients and parameters during federated training of Heterogeneous Graph Networks. Includes a novel disentangled model (D-HGN) that enables type-oriented activation of model parameters.</p>
+      <a href="https://github.com/dongzizhu/FedDA" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Samuel (Zishan) Gu</p>
+</footer>
+
+</body>
+</html>
